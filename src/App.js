@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Colors from "./components/Colors";
+import Counter from "./components/Counter";
+import Form from "./components/Form";
+import User from "./components/User";
+
+
 
 function App() {
+
+  const [isVisible, setIsVisible] = useState(true);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="test">
+      {
+        isVisible && <Counter/> 
+      }
+       <button onClick={() => setIsVisible(!isVisible)}>Göster / Gizle</button>
+      {/* <Form/> */}
+      {/* <Colors/>  */}
+      {/* <User/> */}
     </div>
   );
 }
